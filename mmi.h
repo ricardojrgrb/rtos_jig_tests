@@ -1,0 +1,55 @@
+#ifndef MMI_H_
+#define MMI_H_
+
+#define MMI_NUM_BATTERIES		(5)
+
+#define PIN_LED_RED_BAT1		(27)
+#define PIN_LED_RED_BAT2		(33)
+#define PIN_LED_RED_BAT3		(39)
+#define PIN_LED_RED_BAT4		(45)
+#define PIN_LED_RED_BAT5		(51)
+
+#define PIN_LED_GREEN_BAT1		(29)
+#define PIN_LED_GREEN_BAT2		(35)
+#define PIN_LED_GREEN_BAT3		(41)
+#define PIN_LED_GREEN_BAT4		(47)
+#define PIN_LED_GREEN_BAT5		(53)
+
+typedef enum
+{
+	MMI_PINsLED_GREEN = 0,
+	MMI_PINsLED_RED,
+
+	MMI_PINsLED_MAX,
+}t_e_pinsLed;
+
+typedef enum
+{
+	E_MMI_BAT_RES_NONE = 0,
+	E_MMI_BAT_RES_REPPROVED,
+	E_MMI_BAT_RES_APPROVED,
+	E_MMI_BAT_RES_ABORTED,
+	E_MMI_BAT_RES_HOT,
+	E_MMI_BAT_FINAL_CHARGE,
+
+	E_MMI_BAT_RES_MAX,
+}e_mmi_bat_res;
+
+typedef enum
+{
+	STM_MMI_STANDBY = 0,
+	STM_MMI_BATCONNECTED,
+	STM_MMI_BATDISCONNECTED,
+	STM_MMI_CHECKCHARGE,
+	STM_MMI_CHARGING,
+	STM_MMI_DISCHARGING,
+	STM_MMI_RESULT,
+	STM_MMI_FINAL_CHARGE,
+	
+	STM_MMI_MAX,
+}e_mmi_states;
+
+void p_mmi_init(void);
+void p_mmi_all(void);
+
+#endif
